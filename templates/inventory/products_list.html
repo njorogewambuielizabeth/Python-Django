@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+</head>
+<body>
+
+<table style="border: solid 2px;">
+    <th>
+        <td>title</td>
+        <td>description</td>
+        <td>price</td>
+        <td>product details</td>
+    </th>
+
+    {% for product in products%}
+  
+      
+        <tr>
+            {{product.title}}
+        </td>
+        <td>
+            {{product.description}}
+        </td>
+        <td>
+            {{product.price}}
+        </td>
+
+        <td> 
+            <a href="{% url 'product_details_view' id=product.id %}">View Product </a>
+           </td>
+    </tr>
+    {% endfor %}
+</table>
+    
+</body>
+</html>
