@@ -1,0 +1,52 @@
+/* inventory/products_list.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F0F0F0;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #8B4513; 
+}
+
+th {
+  background-color: #8B4513; 
+  padding: 12px;
+  border: 1px solid #8B4513; 
+  text-align: left;
+  font-weight: bold;
+  color: #fff; 
+}
+
+/* Style table data cells */
+td {
+  padding: 10px;
+  border: 1px solid #8B4513; 
+}
+
+/* Style the link in the last column */
+td a {
+  display: inline-block;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  color: #0088FF;
+  border-radius: 4px;
+  background-color: #E6E6E6;
+  transition: background-color 0.2s ease;
+}
+
+/* Apply hover effect to the link */
+td a:hover {
+  background-color: #D4D4D4;
+}
+
+/* Apply alternate row color */
+tr:nth-child(even) {
+  background-color: #D8C1C1; 
+}

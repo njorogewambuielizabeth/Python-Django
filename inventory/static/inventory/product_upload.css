@@ -1,0 +1,49 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F0F0F0;
+    margin: 0;
+    padding: 20px;
+  }
+  h3 {
+    color: #007BFF;
+  }
+  .upload_form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .upload_form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .upload_form input[type="text"],
+  .upload_form input[type="email"],
+  .upload_form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .upload_form textarea {
+    resize: vertical;
+  }
+  .upload_form button[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .upload_form button[type="submit"]:hover {
+    background-color: #0056B3;
+  }
+  /* Optional: Style the CSRF token field */
+  .upload_form input[name="csrfmiddlewaretoken"] {
+    display: none; /* Hide the CSRF token field */
+  }

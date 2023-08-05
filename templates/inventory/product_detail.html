@@ -1,16 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'inventory/products_detail.css' %}">
 </head>
 <body>
-    <h3>{{product.title}}</h3>
-    <img src="{product.image.url}"/>
-    <p>{{product.description}}</p>
-    <span class="product.price">{{product.price}}</span>
-    <button>Add to cart</button>
-    
+    <div class="card">
+    <h3>{{ product.name }}</h3>
+    <img src="{{ product.image.url }}"/>
+    <p>{{ product.description }}</p>
+    <span class="product.price">{{ product.price }}</span>
+    <a href="{% url 'cart_page' %}">
+        <button>Add to cart</button>
+    </a>
+</div>
 </body>
 </html>
+
+
