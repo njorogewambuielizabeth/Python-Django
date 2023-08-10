@@ -17,6 +17,8 @@
                 <th>Shipment Cost</th>
                 <th>Date</th>
                 <th>Status</th>
+                <th>View Shipping</th>
+                <th>Edit Shipping</th>
             </tr>
         </thead>
         <tbody>
@@ -29,10 +31,10 @@
                 <td>{{ shipment.date }}</td>
                 <td>{{ shipment.status }}</td>
                 <td>
-                  <a href="{% url 'shipment_details_view' id=product.id %}">View Shipping Details </a>
+                  <a href="{% url 'shipment_details_view' id=shipment.id %}">View Shipping Details </a>
               </td>
               <td>
-                  <a href="{% url 'edit_shipment_view' id=product.id %}">Edit Shipment </a>
+                  <a href="{% url 'edit_shipment_view' id=shipment.id %}">Edit Shipment </a>
               </td>
             </tr>
             {% endfor %}
