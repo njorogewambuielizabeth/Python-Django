@@ -1,0 +1,34 @@
+/* order_detail.css */
+
+.card {
+    width: 300px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card img {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin: 5px 0;
+}
+
+.card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Detail</title>
+    <link rel="stylesheet" href="{% static 'vendors/vendor_detail.css' %}">
+</head>
+<body>
+   
+    <div class="card">
+        <h3>Vendor Details</h3>
+        <p>Name: {{ vendor.name }}</p>
+        <p>Contacts: {{ vendor.contacts }}</p>
+        <p>Location: {{ vendor.location }}</p>
+        <p>Password: {{ vendor.password }}</p>
+        <p>Date Created: {{ vendor.date_created }}</p>
+        <p>Date Updated: {{ vendor.date_updated }}</p>
+        
+        
+    </div>
+   
+</body>
+</html>

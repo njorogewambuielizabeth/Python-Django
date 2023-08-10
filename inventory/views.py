@@ -24,14 +24,17 @@ def products_list(request):
 
     return render(request, "inventory/products_list.html", {"products": products})
 
+
 def product_details(request, id):
     product = Product.objects.get(id=id)
     return render(request, "inventory/product_detail.html",{"product": product})
+
 
 def cart_view(request):
     cart_items = []
     # Pass the cart_items to the template.
     return render(request, 'inventory/cart_page.html', {'cart_items': cart_items})
+
 
 def edit_product_view(request, id):
     product = Product.objects.get(id=id)

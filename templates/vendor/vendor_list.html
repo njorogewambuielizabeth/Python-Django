@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor List</title>
+    <link rel="stylesheet" href="{% static 'vendors/vendor_list.css' %}">
+</head>
+<body>
+    <table class="vendor-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Contacts</th>
+                <th>Location</th>
+                <th>Password</th>
+                <th>Date Created</th>
+                <th>Date Updated</th>
+                <th>View Vendor</th>
+                <th>Edit Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vendor in vendors %}
+            <tr>
+                <td>{{ vendor.name }}</td>
+                <td>{{ vendor.contacts }}</td>
+                <td>{{ vendor.location }}</td>
+                <td>{{ vendor.password }}</td>
+                <td>{{ vendor.date_created }}</td>
+                <td>{{ vendor.date_updated }}</td>
+                <td>
+                  <a href="{% url 'vendor_details_view' id=vendor.id %}">View Vendor </a>
+              </td>
+              <td>
+                  <a href="{% url 'edit_vendor_view' id=vendor.id %}">Edit Vendor </a>
+              </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Detail</title>
+    <link rel="stylesheet" href="{% static 'reviews/review_detail.css' %}">
+</head>
+<body>
+   
+    <div class="card">
+        <h3>Review Details</h3>
+        <p>Message: {{ review.message }}</p>
+        <p>Customer: {{ review.customer }}</p>
+        <p>Product: {{ review.product }}</p>
+        <p>Number of Stars: {{ review.number_of_stars }}</p>
+        <p>Date: {{ review.date }}</p>
+        
+        <a href="{% url 'review_list_view' %}">
+            <button>Back to Reviews</button>
+        </a>
+    </div>
+   
+</body>
+</html>

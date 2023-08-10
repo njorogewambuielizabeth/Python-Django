@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Detail</title>
+    <link rel="stylesheet" href="{% static 'orders/order_detail.css' %}">
+</head>
+<body>
+   
+    <div class="card">
+        <h3>Order Details</h3>
+        <img src="{{ order.product_image.url }}" alt="Product Image" />
+        <p>Order Number: {{ order.order_number }}</p>
+        <p>Order Total: {{ order.order_total }}</p>
+        <p>Customer: {{ order.customer }}</p>
+        <p>Delivery Location: {{ order.delivery_location }}</p>
+        <p>Product ID: {{ order.product_id }}</p>
+        <p>Payment Options: {{ order.payment_options }}</p>
+        <p>Order Date: {{ order.order_date }}</p>
+        
+        <a href="{% url 'cart_page' %}">
+            <button>Back to Cart</button>
+        </a>
+    </div>
+   
+</body>
+</html>

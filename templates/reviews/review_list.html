@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="{% static 'reviews/review_list.css' %}">
+</head>
+<body>
+    <table class="review-table">
+        <thead>
+            <tr>
+                <th>Message</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Number of Stars</th>
+                <th>Date</th>
+                <th>View Reviews</th>
+                <th>Edit Reviews</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for review in reviews %}
+            <tr>
+                <td>{{ review.message }}</td>
+                <td>{{ review.customer }}</td>
+                <td>{{ review.product }}</td>
+                <td>{{ review.number_of_stars }}</td>
+                <td>{{ review.date }}</td>
+                <td>
+                  <a href="{% url 'review_detail_view' id=review.id %}">View Review </a>
+              </td>
+              <td>
+                  <a href="{% url 'edit_review_view' id=review.id %}">Edit Review </a>
+              </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

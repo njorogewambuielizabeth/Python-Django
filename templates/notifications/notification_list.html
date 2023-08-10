@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="{% static 'notifications/notification_list.css' %}">
+</head>
+<body>
+    <table class="notification-table">
+        <thead>
+            <tr>
+                <th>Message</th>
+                <th>Customer</th>
+                <th>Time</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for notification in notifications %}
+            <tr>
+                <td>{{ notification.message }}</td>
+                <td>{{ notification.customer }}</td>
+                <td>{{ notification.time }}</td>
+                <td>{{ notification.date }}</td>
+                <td>{{ notification.status }}</td>
+                <td>
+                    <a href="{% url 'notification_details_view' id=notification.id %}">View Notification </a>
+                </td>
+                <td>
+                    <a href="{% url 'edit_notification_view' id=notification.id %}">Edit Notification </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

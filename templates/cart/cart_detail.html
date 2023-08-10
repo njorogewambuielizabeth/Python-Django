@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Detail</title>
+    <link rel="stylesheet" href="{% static 'carts/cart_detail.css' %}">
+</head>
+<body>
+   
+    <div class="card">
+        <h3>Cart Details</h3>
+        <p>Price: {{ cart.price }}</p>
+        <p>Number of Products: {{ cart.number_of_products }}</p>
+        <p>Product: {{ cart.product }}</p>
+        <p>Shipment Cost: {{ cart.shipment_cost }}</p>
+        <p>Payment Options: {{ cart.payment_options }}</p>
+        
+      
+    </div>
+   
+</body>
+</html>

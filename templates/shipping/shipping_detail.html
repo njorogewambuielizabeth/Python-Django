@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipment Detail</title>
+    <link rel="stylesheet" href="{% static 'shipping/shipment_detail.css' %}">
+</head>
+<body>
+   
+    <div class="card">
+        <h3>Shipment Details</h3>
+        <p>Order Numbers: {{ shipment.orders }}</p>
+        <p>Customer: {{ shipment.customer }}</p>
+        <p>Delivery Location: {{ shipment.delivery_location }}</p>
+        <p>Shipment Cost: {{ shipment.shipment_cost }}</p>
+        <p>Date: {{ shipment.date }}</p>
+        <p>Status: {{ shipment.status }}</p>
+        
+        <a href="{% url 'shipment_list_view' %}">
+            <button>Back to Shipments</button>
+        </a>
+    </div>
+   
+</body>
+</html>

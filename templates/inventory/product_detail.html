@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="{% static 'inventory/products_detail.css' %}">
 </head>
 <body>
+   
     <div class="card">
     <h3>{{ product.name }}</h3>
-    <img src="{{ product.image.url }}"/>
+    <img src="{{MEDIA_URL}} {{product.image.url }}"/>
     <p>{{ product.description }}</p>
     <span class="product.price">{{ product.price }}</span>
     <a href="{% url 'cart_page' %}">
         <button>Add to cart</button>
     </a>
+   
 </div>
 </body>
 </html>

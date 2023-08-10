@@ -9,7 +9,7 @@
 </head>
 <body>
     <h3>Product Upload Form</h3>
-    <form method="POST", class="Upload_form">
+    <form method="POST" enctype="multipart/form-data" class="Upload_form">
     {% csrf_token%}
     {{form.as_p}}
     <button type="submit">Save</button>

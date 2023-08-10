@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Review</title>
+    <link rel="stylesheet" href="{% static 'reviews/edit_review.css' %}">
+</head>
+<body>
+   
+    <div class="card">
+        <h3>Edit Review</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save Changes</button>
+        </form>
+        
+        <a href="{% url 'review_detail_view' review.id %}">
+            <button>Cancel</button>
+        </a>
+    </div>
+   
+</body>
+</html>

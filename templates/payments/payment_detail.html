@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Detail</title>
+    <link rel="stylesheet" href="{% static 'payments/payment_detail.css' %}">
+</head>
+<body>
+   
+    <div class="card">
+        <h3>Payment Details</h3>
+        <img src="{{ payment.product_image.url }}" alt="Product Image" />
+        <p>Amount: {{ payment.amount }}</p>
+        <p>Order Total: {{ payment.order_total }}</p>
+        <p>Customer: {{ payment.customer }}</p>
+        <p>Delivery Location: {{ payment.delivery_location }}</p>
+        <p>Payment Method: {{ payment.payment_method }}</p>
+        <p>Date: {{ payment.date }}</p>
+        <p>Status: {{ payment.status }}</p>
+        
+        <a href="{% url 'cart_page' %}">
+            <button>Back to Cart</button>
+        </a>
+    </div>
+   
+</body>
+</html>

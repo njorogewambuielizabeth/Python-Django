@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Detail</title>
+    <link rel="stylesheet" href="{% static 'notifications/notification_detail.css' %}">
+</head>
+<body>
+   
+    <div class="card">
+        <h3>Notification Details</h3>
+        <p>Message: {{ notification.message }}</p>
+        <p>Customer: {{ notification.customer }}</p>
+        <p>Time: {{ notification.time }}</p>
+        <p>Date: {{ notification.date }}</p>
+        <p>Status: {{ notification.status }}</p>
+        
+        <a href="{% url 'notification_list_view' %}">
+            <button>Back to Notifications</button>
+        </a>
+    </div>
+   
+</body>
+</html>
