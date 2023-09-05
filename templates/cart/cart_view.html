@@ -1,34 +1,30 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart List</title>
+    <title>Cart View</title>
     <link rel="stylesheet" href="{% static 'cart/cart_view.css' %}">
 </head>
 <body>
-    <table class="cart-table">
-        <thead>
-            <tr>
-                <th>Price</th>
-                <th>Number of Products</th>
-                <th>Product</th>
-                <th>Shipment Cost</th>
-                <th>Payment Options</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for cart in carts %}
-            <tr>
-                <td>{{ cart.price }}</td>
-                <td>{{ cart.number_of_products }}</td>
-                <td>{{ cart.product }}</td>
-                <td>{{ cart.shipment_cost }}</td>
-                <td>{{ cart.payment_options }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <header>
+        <h1>My Cart</h1>
+    </header>
+    <div class="cart-container">
+        {% for cart_item in cart_items %}
+        <div class="cart-item">
+            <img src="{{ cart_item.image.url }}" alt="{{ cart_item.product }}">
+            <div class="item-details">
+                <h2>{{ cart_item.product }}</h2>
+                <p>Price: ${{ cart_item.price }}</p>
+                <p>Quantity: {{ cart_item.number_of_products }}</p>
+                <p>Shipment Cost: ${{ cart_item.shipment_cost }}</p>
+                <p>Payment Options: {{ cart_item.payment_options }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 </html>

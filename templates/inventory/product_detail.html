@@ -14,7 +14,7 @@
     <img src="{{MEDIA_URL}} {{product.image.url }}"/>
     <p>{{ product.description }}</p>
     <span class="product.price">{{ product.price }}</span>
-    <a href="{% url 'cart_page' %}">
+    <a href="{% url 'add_to_cart_view' %}">
         <button>Add to cart</button>
     </a>
    

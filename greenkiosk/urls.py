@@ -30,6 +30,7 @@ path('admin/', admin.site.urls),
     path('notifications/',include('notifications.urls')),
     path('cart/',include('cart.urls')),
     path('vendor/',include('vendor.urls')),
+    path('api/',include('api.urls')),
 
 ]
 if settings.DEBUG:

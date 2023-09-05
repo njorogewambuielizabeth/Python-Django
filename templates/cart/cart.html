@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- cart.html -->
+
+<h1>Shopping Cart</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cart_items %}
+            <tr>
+                <td>{{ item.product }}</td>
+                <td><img src="{{ item.image.url }}" alt="{{ item.product }}"></td>
+                <td>${{ item.price }}</td>
+                <td>
+                    <form method="POST" action="{% url 'update_quantity' item.id %}">
+                        {% csrf_token %}
+                        <input type="number" name="quantity" value="{{ item.quantity }}" min="1">
+                        <button type="submit">Update</button>
+                    </form>
+                </td>
+                <td>${{ item.total_price }}</td>
+                <td>
+                    <a href="{% url 'remove_item' item.id %}">Remove</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+    
+</body>
+</html>
