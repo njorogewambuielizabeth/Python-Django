@@ -19,4 +19,5 @@ urlpatterns = [
     path('update_quantity/<int:item_id>/', views.update_quantity, name='update_quantity'),
     path('remove_item/<int:item_id>/', views.remove_item, name='remove_item'),
  
+
 ]

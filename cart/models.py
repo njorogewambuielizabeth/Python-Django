@@ -15,3 +15,16 @@ class Cart(models.Model):
 
     def __str__(self):
         return f"Cart #{self.pk} - {self.product}"
+    
+
+    def add_product(self,product):
+        self.product.add(product)
+        self.save()
+        return self
+    
+    def get_total(self):
+        products = self.product
+        total = 0
+        for prod in products:
+            total += prod.price
+            return total

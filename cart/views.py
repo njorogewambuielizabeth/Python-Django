@@ -2,6 +2,10 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect,get_object_or_404
 from .forms import CartForm
 from .models import Cart
+from rest_framework.views import APIView
+from inventory.models import Product
+from rest_framework.response import Response
+from .serializers import CartSerializer
 # Create your views here.
 
 def cart(request):
@@ -81,6 +85,19 @@ def remove_item(request, item_id):
     item = get_object_or_404(Cart, pk=item_id)
     item.delete()
     return redirect('cart_view')
+
+
+class AddToCart(APIView):
+    def post(self, request,format=None):
+        cart_id = request.data["cart_id"]
+        product_id = request.data["product_id"]
+        cart = Cart.objects.get(id = cart_id)
+        product = Product.objects.get(id = product_id)
+        updated_cart = cart.add_product(product)
+        serializer = CartSerializer(updated_cart)
+        return Response(serializer.data)
+
+
 
 
 
